@@ -243,6 +243,7 @@ fn is_inline(event: &UnflattenedEvent) -> bool {
             Tag::Table(_) => false,
             Tag::TableHead | Tag::TableRow => unreachable!(),
             Tag::Link { .. } => true,
+            Tag::HtmlBlock => true,
             _ => todo!("handle tag: {tag:?}"),
         },
     }
